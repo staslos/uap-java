@@ -8,17 +8,15 @@ Build:
 ------
 
     mvn package
-    
-    make sure you have ../uap-core checked out too
+Make sure you have ../uap-core checked out too
 
 Install to Magnetic Repo on S3:
 ------
 
     mvn deploy
+You need settings.xml with AWS credentials in your local Maven repo (~/.m2/settings.xml), grab one from keyword-categorization
 
-    you need settings.xml with AWS credentials in your local Maven repo (~/.m2/settings.xml), grab one from keyword-categorization
-
-    also you need JDK 1.7 or higher
+Also you need JDK 1.7 or higher
 
 Usage:
 --------
