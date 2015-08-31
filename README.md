@@ -9,6 +9,15 @@ Build:
 
     mvn package
 
+Install to Magnetic Repo on S3:
+------
+
+    mvn deploy
+
+    you need settings.xml with AWS credentials in your local Maven repo (~/.m2/settings.xml), grab one from keyword-categorization
+
+    also you need JDK 1.7 or higher
+
 Usage:
 --------
 ```java

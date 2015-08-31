@@ -58,7 +58,35 @@
         </executions>
       </plugin>
     </plugins>
+    <extensions>
+        <extension>
+            <groupId>org.springframework.build</groupId>
+            <artifactId>aws-maven</artifactId>
+            <version>5.0.0.RELEASE</version>
+       </extension>
+    </extensions>
   </build>
+
+  <distributionManagement>
+    <!-- 
+        We are using an amazon S3 bucket to store our maven artefacts as
+        described here: 
+        http://jmchung.github.io/blog/2015/03/01/using-amazon-s3-as-a-private-maven-repository/
+        The aws-maven extension above lets maven treat this as a regular maven repository. Aws
+        credentials are in settings.xml  
+    --> 
+    <repository>
+        <id>maven-s3-release-repo</id>
+        <name>AWS Release Repository</name>
+        <url>s3://packages-magnetic-com/maven/releases</url>
+    </repository>
+    <snapshotRepository>
+        <id>maven-s3-snapshot-repo</id>
+        <name>AWS Snapshot Repository</name>
+        <url>s3://packages-magnetic-com/maven/snapshots</url>
+    </snapshotRepository> 
+  </distributionManagement>
+
   <dependencies>
     <dependency>
       <groupId>org.yaml</groupId>
