@@ -8,6 +8,8 @@ Build:
 ------
 
     mvn package
+    
+    make sure you have ../uap-core checked out too
 
 Install to Magnetic Repo on S3:
 ------
